@@ -1,18 +1,10 @@
-# docker-alpine-webdav
-Webdav server running in Alpine Linux container
+# Docker WebDAV Server On Alpine Linux
+WebDAV server running in Alpine Linux container. Can be used in `network_mode: host` and configured for a port alternate to 80.
 
-See docker-compose.yml for options you can use to run this image.
+DockerHub: https://hub.docker.com/r/mbagnall/webdav
+Compiled For: `arm64` and `amd64`
 
-## Image size comparison
+Mount files to: `/var/webdav`
 
-1/10th the size of ubuntu + apache2:
+See `docker-compose.yml` for additional configuration options.
 
-```
-donn@p4:~/workspace/github.com/donnlee/docker-alpine-webdav$ d images
-REPOSITORY                  TAG                 IMAGE ID            CREATED             SIZE
-donn/docker-alpine-webdav   latest              f9e697f9381e        10 minutes ago      22.96 MB
-
-
-donn@mine:~/workspace/gitlab.com/donnlee/webdav-docker$ d images | grep webdav
-donn/webdav-docker        latest              8a535259f48f        2 weeks ago         224.8 MB
-```

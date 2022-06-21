@@ -1,17 +1,12 @@
-version: '2'
+version: '3'
 services:
   alpine-webdav:
-    image: donn/docker-alpine-webdav
-    restart: always
-    ports:
-      - 8888:80
+    image: mbagnall/webdav
+    network_mode: host
     volumes:
-      - /home/donn/workspace/yt:/var/webdav
+      - ./webdav:/var/webdav
     environment:
       - USERNAME=test
       - PASSWORD=test
-    logging:
-      options:
-        max-size: "10m"
-        max-file: "2"
-
+      - PORT=8114
+    restart: unless-stopped
